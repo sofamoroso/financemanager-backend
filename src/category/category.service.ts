@@ -16,6 +16,11 @@ export class CategoryService {
     return this.categoryRepository.save(category);
   }
 
+  // Fetch all categories
+  async findAll(): Promise<Category[]> {
+    return this.categoryRepository.find(); // This will get all categories from the database
+  }
+
   getHello(): string {
     return 'Hello from Category Service!';
   }
