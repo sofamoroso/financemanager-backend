@@ -21,7 +21,17 @@ export class CategoryService {
     return this.categoryRepository.find(); // This will get all categories from the database
   }
 
-  getHello(): string {
-    return 'Hello from Category Service!';
-  }
+  // async findOne(id: number): Promise<Category> {
+  //   const category = await this.categoryRepository.findOne({
+  //     where: { id },
+  //   });
+  //   if (!category) {
+  //     throw new Error('Category not found');
+  //   }
+  //   return category;
+  // }
+
+  // getHello(): string {
+  //   return 'Hello from Category Service!';
+  // }
 }
