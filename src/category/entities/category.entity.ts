@@ -1,5 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entry } from 'src/entries/entities/entry.entity';
 @Entity()
 export class Category {
   // The id field in your entity is marked with @PrimaryGeneratedColumn(),
@@ -9,4 +9,7 @@ export class Category {
 
   @Column()
   name: string;
+
+  @OneToMany(() => Entry, (entry) => entry.category)
+  entries: Entry[];
 }

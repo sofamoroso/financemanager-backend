@@ -21,6 +21,15 @@ export class CategoryService {
     return this.categoryRepository.find(); // This will get all categories from the database
   }
 
+  // Delete category by ID
+  async remove(id: number): Promise<void> {
+    const categoryId = Number(id);
+    const result = await this.categoryRepository.delete(categoryId);
+    if (result.affected === 0) {
+      throw new Error('Category not found');
+    }
+  }
+
   // async findOne(id: number): Promise<Category> {
   //   const category = await this.categoryRepository.findOne({
   //     where: { id },

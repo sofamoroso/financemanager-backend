@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CategoryModule } from './category/category.module';
+import { EntriesModule } from './entries/entries.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { CategoryModule } from './category/category.module';
       inject: [ConfigService],
     }),
     CategoryModule,
+    EntriesModule,
   ],
 })
 export class AppModule {}
