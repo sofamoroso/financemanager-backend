@@ -9,15 +9,9 @@ export class CategoryController {
 
   @Get()
   async findAll(): Promise<Category[]> {
-    console.log('get them all');
+    // console.log('gotta fetch them all');
     return this.categoryService.findAll(); // Return the list of categories from the service
   }
-
-  // Fetch a category by ID
-  // @Get(':id')
-  // async findOne(@Param('id') id: number): Promise<Category> {
-  //   return this.categoryService.findOne(id);
-  // }
 
   @Post()
   async createCategory(@Body() categoryDto: CreateCategoryDto) {

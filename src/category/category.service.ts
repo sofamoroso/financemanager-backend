@@ -39,8 +39,4 @@ export class CategoryService {
   //   }
   //   return category;
   // }
-
-  // getHello(): string {
-  //   return 'Hello from Category Service!';
-  // }
 }
